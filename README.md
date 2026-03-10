@@ -51,31 +51,43 @@ Install MariaDB.
 
 . Connect
 
-```shell
+
 ## 1. Switch to root user
-~~~sh
+```shell
 sudo -i
-~~~
+```
 
 ## 2. Update the instance
+```shell
 apt update
-
+```
 ## 3. Install MySQL client
+```sh
 apt install mysql-client -y
+```
 
 ## 4. Mysql
+```sh
 mysql -h (endpoint) -u (username) -p
+```
 Enter password (password)
 
 # RDS Database Endpoint copy & paste
 # Example: mysql -h database-1.ca9eie2mihs7.us-east-1.rds.amazonaws.com -u admin -p
 # Example: redhat123
 
+```sh
 CREATE DATABASE student_db;
+```
+```sh
 GRANT ALL PRIVILEGES ON springbackend.* TO 'username'@'localhost' IDENTIFIED BY 'password';
+```
+```sh
 show databases;
+```
+```sh
 exit;
-
+```
 # Example: GRANT ALL PRIVILEGES ON springbackend.* TO 'admin'@'localhost' IDENTIFIED BY 'redhat123';
 
 
