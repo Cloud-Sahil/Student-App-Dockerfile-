@@ -72,9 +72,9 @@ mysql -h (endpoint) -u (username) -p
 ```
 Enter password (password)
 
-# RDS Database Endpoint copy & paste
-# Example: mysql -h database-1.ca9eie2mihs7.us-east-1.rds.amazonaws.com -u admin -p
-# Example: redhat123
+#### RDS Database Endpoint copy & paste
+#### Example: mysql -h database-1.ca9eie2mihs7.us-east-1.rds.amazonaws.com -u admin -p
+#### Example: redhat123
 
 ```sh
 CREATE DATABASE student_db;
@@ -88,7 +88,7 @@ show databases;
 ```sh
 exit;
 ```
-# Example: GRANT ALL PRIVILEGES ON springbackend.* TO 'admin'@'localhost' IDENTIFIED BY 'redhat123';
+#### Example: GRANT ALL PRIVILEGES ON springbackend.* TO 'admin'@'localhost' IDENTIFIED BY 'redhat123';
 
 
 ### 5. Install Docker
