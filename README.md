@@ -52,21 +52,21 @@ Install MariaDB.
 . Connect
 
 
-## 1. Switch to root user
+### 1. Switch to root user
 ```shell
 sudo -i
 ```
 
-## 2. Update the instance
+### 2. Update the instance
 ```shell
 apt update
 ```
-## 3. Install MySQL client
+### 3. Install MySQL client
 ```sh
 apt install mysql-client -y
 ```
 
-## 4. Mysql
+### 4. Mysql
 ```sh
 mysql -h (endpoint) -u (username) -p
 ```
@@ -91,11 +91,15 @@ exit;
 # Example: GRANT ALL PRIVILEGES ON springbackend.* TO 'admin'@'localhost' IDENTIFIED BY 'redhat123';
 
 
-## 5. Install Docker
+### 5. Install Docker
+```sh
 apt install docker.io -y
+```
 
-## 6. Clone the GitHub Repository
+### 6. Clone the GitHub Repository
+```sh
 git clone <GitHub_Repository_Link>
+```
 
 # Example: git clone https://github.com/username/student-registration.git
 
