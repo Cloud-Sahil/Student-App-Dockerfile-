@@ -53,7 +53,9 @@ Install MariaDB.
 
 ```shell
 ## 1. Switch to root user
+~~~sh
 sudo -i
+~~~
 
 ## 2. Update the instance
 apt update
