@@ -101,11 +101,13 @@ apt install docker.io -y
 git clone <GitHub_Repository_Link>
 ```
 
-# Example: git clone https://github.com/username/student-registration.git
-
+#### Example: git clone https://github.com/username/student-registration.git
+```sh
 cd <GitHub_Repository_Name>/backend
+```
+```sh
 cp src/main/resources/application.properties .
-
+```
 # Write application.properties =
 nano application.properties
     server.port=8080
