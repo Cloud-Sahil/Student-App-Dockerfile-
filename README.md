@@ -138,68 +138,86 @@ spring.jpa.show-sql=true
 ```
 ### Then ctrl s+x
 
-## 7. Backend =
+### 7. Backend =
 
-# Write Backend Dockerfile =
+### Write Backend Dockerfile =
+```sh
 nano dockerfile
-    FROM maven:3.8.3-openjdk-17
-    COPY . /opt
-    WORKDIR /opt
-    RUN rm -rf src/main/resources/application.properties
-    RUN cp -rf application.properties src/main/resources
-    RUN mvn clean package
-    WORKDIR /opt/target
-    EXPOSE 8080
-    CMD ["java","-jar","student-registration-backend-0.0.1-SNAPSHOT.jar"]
-
-# Build Backend Dockerfile
+```
+```sh
+FROM maven:3.8.3-openjdk-17
+COPY . /opt
+WORKDIR /opt
+RUN rm -rf src/main/resources/application.properties
+RUN cp -rf application.properties src/main/resources
+RUN mvn clean package
+WORKDIR /opt/target
+EXPOSE 8080
+CMD ["java","-jar","student-registration-backend-0.0.1-SNAPSHOT.jar"]
+```
+### Build Backend Dockerfile
+```sh
 docker build . -t backend :v1
+```
 
-# Check docker images
+### Check docker images
+```sh
 docker images
-
-# Docker Container run 
+```
+### Docker Container run 
+```sh
 docker run -d -p 8080:8080 backend :v1
-
-# Check docker container
+```
+### Check docker container
+```sh
 docker ps
-
-## 8. Frontend =
-
+```
+### 8. Frontend =
+```sh
 cd ../frontend/
+```
+```sh
 ls
+```
 
-# Write .env file =
+### Write .env file =
+```sh
 nano .env
+```
+#### Example: (Paste EC2 public IP)
 
-# Example: (Paste EC2 public IP)
-
-# Write Frontend dockerfile =
+### Write Frontend dockerfile =
+```sh
 nano dockerfile
-    FROM node:25-alpine3.21
-    COPY . /opt
-    WORKDIR /opt
-    RUN apk update 
-    RUN apk add apache2
-    RUN npm install
-    RUN npm run build
-    RUN cp -rf dist/* /var/www/localhost/htdocs/
-    EXPOSE 80
-    CMD ["httpd","-D","FOREGROUND"]
+```
+```sh
+ROM node:25-alpine3.21
+COPY . /opt
+WORKDIR /opt
+RUN apk update 
+RUN apk add apache2
+RUN npm install
+RUN npm run build
+RUN cp -rf dist/* /var/www/localhost/htdocs/
+EXPOSE 80
+CMD ["httpd","-D","FOREGROUND"]
+```
 
-
-# Build Frontend Dockerfile
+### Build Frontend Dockerfile
+```sh
 docker build . -t frontend :v1
-
-# Check docker images
+```
+### Check docker images
+```sh
 docker images
-
-# Docker Container run 
+```
+### Docker Container run 
+```sh
 docker run -d -p 80:80 frontend :v1
-
-# Check docker container
+```
+### Check docker container
+```sh
 docker ps
-
 ```
 
 
